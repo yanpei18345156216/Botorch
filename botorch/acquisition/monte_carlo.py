@@ -94,7 +94,7 @@ class qExpectedImprovement(MCAcquisitionFunction):
 
         Args:
             model: A fitted model.
-            best_f: The best (feasible) function value observed so far (assumed
+            best_f: The best objective value observed so far (assumed
                 noiseless).
             sampler: The sampler used to draw base samples. Defaults to
                 `SobolQMCNormalSampler(num_samples=500, collapse_batch_dims=True)`
@@ -220,7 +220,7 @@ class qProbabilityOfImprovement(MCAcquisitionFunction):
 
         Args:
             model: A fitted model.
-            best_f: The best (feasible) function value observed so far (assumed
+            best_f: The best objective value observed so far (assumed
                 noiseless).
             sampler: The sampler used to draw base samples. Defaults to
                 `SobolQMCNormalSampler(num_samples=500, collapse_batch_dims=True)`

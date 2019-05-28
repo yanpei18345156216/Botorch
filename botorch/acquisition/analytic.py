@@ -272,9 +272,11 @@ class ConstrainedExpectedImprovement(AnalyticAcquisitionFunction):
     Example:
         >>> # example where 0th output has a non-negativity constraint and
         ... # 1st output is the objective
-        >>> model = SingleTaskGP(train_X, train_Y)
-        >>> constraints = {0: (0.0, None)}
-        >>> cEI = ConstrainedExpectedImprovement(model, 0.2, 1, constraints)
+        >>> objective = SingleTaskGP(train_X_obj, train_Y)
+        >>> constraint = SingleTaskGP(train_X_cons, train_Y)
+        >>> model = ModelListGP([objective, constraint])
+        >>> constraints = {1: (0.0, None)}
+        >>> cEI = ConstrainedExpectedImprovement(model, 0.2, 0, constraints)
         >>> cei = cEI(test_X)
     """
 
